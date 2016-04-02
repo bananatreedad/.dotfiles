@@ -266,7 +266,7 @@ nnoremap <leader>/ "fyiw :/<c-r>f<cr>
 "      Plugin 
 """"""""""""""""""""""""""
 
-map <leader>af :Autoformat
+map <leader>af :Autoformat<cr>
 "Latex Box
 "mappings for latex-box
 map ,ll <leader>ll
