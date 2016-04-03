@@ -47,6 +47,7 @@ ZSH_THEME="pmcgee"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+#
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # see plugin list @ wiki: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
@@ -94,10 +95,12 @@ export PATH=$DOTFILES/bin:$PATH
 
 # Tomorrow Theme
 # # if [ -z "$THEME" ]; then
-    export THEME="Tomorrow-Night-Eighties"
+    export THEME="base16-railscasts"
 # fi
 if [ -z "$BACKGROUND" ]; then
-    export BACKGROUND="light"
+    export BACKGROUND="dark"
 fi
 
-#TOMORROW_SHELL="$DOTFILES/themes/$THEME.$BACKGROUND.sh"
+BASE16_SHELL="$DOTFILES/themes/base16-shell/$THEME.$BACKGROUND.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+source $BASE16_SHELL
