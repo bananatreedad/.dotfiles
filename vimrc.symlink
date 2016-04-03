@@ -58,7 +58,6 @@ filetype plugin indent on    " required
 "
 " ---------------------------------
 "
-
 """"""""""""""""""""""""""
 "       General
 """"""""""""""""""""""""""
@@ -222,6 +221,8 @@ map <leader>ev :e! ~/.vimrc<cr>
 map <leader>ez :e! ~/.zshrc<cr>
 " edit gitconfig
 map <leader>eg :e! ~/.gitconfig<cr>
+" edit tmux config 
+map <leader>et :e! ~/.tmux.conf<cr>
 
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
