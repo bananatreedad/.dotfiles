@@ -89,3 +89,13 @@ for config ($ZSH/**/*.zsh) source $config
 
 # adding path directory for custom scripts
 export PATH=$DOTFILES/bin:$PATH
+
+# Tomorrow Theme
+# # if [ -z "$THEME" ]; then
+    export THEME="Tomorrow-Night-Eighties"
+# fi
+if [ -z "$BACKGROUND" ]; then
+    export BACKGROUND="light"
+fi
+
+#TOMORROW_SHELL="$DOTFILES/themes/$THEME.$BACKGROUND.sh"
