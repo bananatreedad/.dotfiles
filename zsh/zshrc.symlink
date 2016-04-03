@@ -79,6 +79,8 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 #copy pwd to clipboard
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 
+#bindings
+bindkey -M vicmd '/' history-incremental-search-backward
 
 #########dotfile config########
 export DOTFILES=$HOME/.dotfiles
