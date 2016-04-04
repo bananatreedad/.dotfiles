@@ -1,5 +1,5 @@
 #!/usr/bin/osascript
-property defaultAccount : "Pollen"
+property defaultAccount : "Google"
 property defaultMailbox : "INBOX"
 
 on run args
