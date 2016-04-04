@@ -1,3 +1,4 @@
+#set -g default-command "reattach-to-user-namespace -l zsh"
 #
 # tmux display things in 256 colors
 set -g default-terminal "screen-256color"
@@ -57,6 +58,9 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
 # Resize pane shortcuts
 bind -r H resize-pane -L 10
 bind -r J resize-pane -D 10
@@ -65,6 +69,12 @@ bind -r L resize-pane -R 10
 
 # enable mouse support for switching panes/windows
 setw -g mouse on
+
+# maximizing and restoring windows
+unbind Up
+bind Up new-window -d -n fullscreen \; swap-pane -s fullscreen.1 \; select-window -t fullscreen
+unbind Down
+bind Down last-window \; swap-pane -s fullscreen.1 \; kill-window -t fullscreen
 
 ##############################
 ### Color & Style Settings ###
