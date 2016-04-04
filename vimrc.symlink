@@ -13,12 +13,16 @@ Plugin 'chriskempson/base16-vim'
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'benmills/vimux' " tmux integration for vim
+Plugin 'vim-airline/vim-airline' " fancy statusline
+Plugin 'vim-airline/vim-airline-themes' " themes for vim-airline
+
 " plugin to comment
 Plugin 'tomtom/tcomment_vim'
 "tree plugin
 Plugin 'scrooloose/nerdtree'
 "statusbar
-Plugin 'itchyny/lightline.vim'
+"Plugin 'itchyny/lightline.vim'
 "show colors picker
 Plugin 'Rykka/colorv.vim'
 "latex build & show
@@ -283,3 +287,19 @@ nmap <silent> <leader>r :CtrlPBuffer<cr>
 let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
+
+" airline options
+let g:airline_powerline_fonts=1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='base16'
+
+if (has("gui_running"))
+	set guioptions=egmrt
+	set background=light
+	colorscheme solarized
+	let g:airline_left_sep=''
+	let g:airline_right_sep=''
+	let g:airline_powerline_fonts=0
+	let g:airline_theme='solarized'
+endif
