@@ -34,7 +34,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'tpope/vim-fugitive' " amazing git wrapper for vim
-Plugin 'pscrooloose/syntastic' "syntax checker
+Plugin 'scrooloose/syntastic' "syntax checker
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -253,14 +253,12 @@ nmap <leader>] >>
 " switch between current and last buffer
 nmap <leader>. <c-^>
 
-" enable . command in visual mode
+" enabl . command in visual mode
 vnoremap . :normal .<cr>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-
-map <C-w> :q<cr>
 
 " search for word under the cursor
 nnoremap <leader>/ "fyiw :/<c-r>f<cr>
@@ -282,6 +280,13 @@ nnoremap <silent> j gj
 nnoremap <silent> k gk
 nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
+
+if bufwinnr(1)
+  noremap <silent> <S-H> :vertical resize +3<CR>
+  noremap <silent> <S-L> :vertical resize -3<CR>
+  noremap <silent> <S-J> :resize +3<CR>
+  noremap <silent> <S-K> :resize -3<CR>
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
@@ -322,7 +327,15 @@ endfunction
 
 """"""""""""""""""""""""""
 "      Plugin
-""""""""""""""""""""""""""
+"""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 map <leader>af :Autoformat<cr>
 "Latex Box
