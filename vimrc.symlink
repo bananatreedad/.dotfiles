@@ -268,8 +268,7 @@ map <silent> <C-j> :call WinMove('j')<cr>
 map <silent> <C-k> :call WinMove('k')<cr>
 map <silent> <C-l> :call WinMove('l')<cr>
 
-
-map <leader>r :call RunCustomCommand()<cr>
+"map <leader>r :call RunCustomCommand()<cr>
 let g:silent_custom_command = 0
 
 " toggle cursor line
@@ -282,10 +281,10 @@ nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
 if bufwinnr(1)
-  noremap <silent> <S-H> :vertical resize +3<CR>
-  noremap <silent> <S-L> :vertical resize -3<CR>
-  noremap <silent> <S-J> :resize +3<CR>
-  noremap <silent> <S-K> :resize -3<CR>
+	noremap <silent> <S-H> :vertical resize +3<CR>
+	noremap <silent> <S-L> :vertical resize -3<CR>
+	noremap <silent> <S-J> :resize +3<CR>
+	noremap <silent> <S-K> :resize -3<CR>
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -328,6 +327,10 @@ endfunction
 """"""""""""""""""""""""""
 "      Plugin
 """""""""""""""""""""""""
+
+
+let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -339,7 +342,7 @@ let g:syntastic_check_on_wq = 0
 
 map <leader>af :Autoformat<cr>
 "Latex Box
-let g:LatexBox_viewer = 'open -a Skim' "open pdfs with Skim"
+let g:LatexBox_latexmk_options = "-pdf -output-directory=build"
 
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=0

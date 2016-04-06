@@ -15,3 +15,6 @@ alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 alias slp="pmset sleepnow"
+
+alias lmc="latexmk -pdf -output-directory=build -pvc"
+alias lm="latexmk -pdf -output-directory=build -pv"
