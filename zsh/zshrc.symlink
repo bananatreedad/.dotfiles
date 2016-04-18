@@ -95,7 +95,7 @@ export PATH=$DOTFILES/bin:$PATH
 
 # Tomorrow Theme
 # # if [ -z "$THEME" ]; then
-    export THEME="base16-railscasts"
+    export THEME="base16-isotope"
 # fi
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
