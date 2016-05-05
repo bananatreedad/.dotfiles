@@ -1,4 +1,5 @@
-# reload zsh config
+#
+#reload zsh config
 alias reload!='source ~/.zshrc'
 
 # ROT13-encode text. Works for decoding, too! ;)
@@ -18,3 +19,6 @@ alias slp="pmset sleepnow"
 
 alias lmc="latexmk -pdf -output-directory=build -pvc"
 alias lm="latexmk -pdf -output-directory=build -pv"
+
+alias wireless_off="networksetup -setairportpower en0 off"
+alias wireless_on="networksetup -setairportpower en0 on"

@@ -1,0 +1,3 @@
+source ~/.vimrc
+
+:map ,af :action ReformatCode<CR>
