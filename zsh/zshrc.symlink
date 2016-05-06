@@ -1,5 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/pi/.oh-my-zsh
+
+if [[ $(uname) == 'Darwin' ]]; then
+    export RUNNING_OS='Darwin'
+    export ZSH=/Users/jnt/.oh-my-zsh
+else
+    export ZSH=/home/pi/.oh-my-zsh
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -90,17 +96,17 @@ export ZSH=$DOTFILES/zsh
 # source all .zsh files inside of the zsh/ directory
 for config ($ZSH/**/*.zsh) source $config
 
-# adding path directory for custom scripts
-export PATH=$DOTFILES/bin:$PATH
+    # adding path directory for custom scripts
+    export PATH=$DOTFILES/bin:$PATH
 
-# Tomorrow Theme
-# # if [ -z "$THEME" ]; then
-  export THEME="base16-atelierforest"
-# fi
-if [ -z "$BACKGROUND" ]; then
-    export BACKGROUND="dark"
-fi
+    # Tomorrow Theme
+    # # if [ -z "$THEME" ]; then
+    export THEME="base16-atelierforest"
+    # fi
+    if [ -z "$BACKGROUND" ]; then
+        export BACKGROUND="dark"
+    fi
 
-BASE16_SHELL="$DOTFILES/themes/base16-shell/$THEME.$BACKGROUND.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-source $BASE16_SHELL
+    BASE16_SHELL="$DOTFILES/themes/base16-shell/$THEME.$BACKGROUND.sh"
+    # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+    source $BASE16_SHELL
