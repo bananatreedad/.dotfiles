@@ -2,7 +2,6 @@
 
 echo "Installing dotfiles"
 
-source install/link.sh
 
 if [ "$(uname)" == "Darwin" ]; then
     echo -e "\n\nRunning on OSX"
@@ -10,6 +9,15 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/osx.sh
 
 fi
+
+if [ "$(uname)" == "Linux" ]; then
+    echo -e "\n\nRunning on Linux"
+
+    source install/linux_debian.sh
+
+fi
+
+source install/link.sh
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
