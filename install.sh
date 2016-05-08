@@ -18,6 +18,8 @@ if [ "$(uname)" == "Linux" ]; then
 fi
 
 source install/link.sh
+source install/loadLib.sh
+
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
