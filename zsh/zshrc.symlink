@@ -2,10 +2,10 @@
 
 if [[ $(uname) == 'Darwin' ]]; then
     export RUNNING_OS='Darwin'
-    export ZSH=/Users/jnt/.oh-my-zsh
 else
-    export ZSH=/home/pi/.oh-my-zsh
 fi
+
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
