@@ -1,0 +1,3 @@
+add vundle to install.sh
+
+add clone of base16 properly recursive
