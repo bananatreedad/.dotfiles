@@ -22,3 +22,5 @@ alias lm="latexmk -pdf -output-directory=build -pv"
 
 alias wireless_off="networksetup -setairportpower en0 off"
 alias wireless_on="networksetup -setairportpower en0 on"
+
+alias vim="nvim"

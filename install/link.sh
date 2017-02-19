@@ -15,3 +15,5 @@ for file in $linkables ; do
         ln -s $file $target
     fi
 done
+
+ln -sf $HOME/.dotfiles/nvimrc.link $HOME/.config/nvim/init.vim 
