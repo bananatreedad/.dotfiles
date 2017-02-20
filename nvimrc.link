@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'benekastah/neomake'
 Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
+Plug 'kien/ctrlp.vim'
 
 call plug#end()
 
@@ -105,7 +106,7 @@ set pastetoggle=<F6>
 map <leader>v :set paste!<cr>
 
 " edit ~/.vimrc
-map <leader>ev :e! ~/.vimrc<cr>
+map <leader>ev :e! ~/.dotfiles/nvimrc.link<cr>
 " edit ~/.zshrc
 map <leader>ez :e! ~/.zshrc<cr>
 " edit gitconfig
