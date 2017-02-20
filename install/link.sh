@@ -16,4 +16,5 @@ for file in $linkables ; do
     fi
 done
 
+mkdir -p $HOME/.config/nvim
 ln -sf $HOME/.dotfiles/nvimrc.link $HOME/.config/nvim/init.vim 
