@@ -9,6 +9,8 @@ Plug 'chriskempson/base16-vim' " colorschemes
 Plug 'kien/ctrlp.vim' " fuzzy finder
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
+Plug 'mattn/emmet-vim' "emmet makes html easy
+Plug 'vim-syntastic/syntastic' "syntax highlighting for a lot of languages
 
 call plug#end()
 
@@ -248,3 +250,13 @@ let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = 'find %s -type f' " MacOSX/Linux
 
+"syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
