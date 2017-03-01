@@ -91,6 +91,8 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 #copy pwd to clipboard
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 
+alias pserve="ifconfig | grep netmask && python -m SimpleHTTPServer 8000"
+
 #search in history
 alias hg='history | grep'
 
