@@ -119,5 +119,5 @@ export PATH="/Users/jnt/anaconda3/bin:$PATH"
 
 #semester aliases
 
-alias study="cd ~/Dropbox/01-Berner\ Fachhochschule/05-Frühlingssemester\ 2017"
+alias study="cd ~/Dropbox/01-Berner\ Fachhochschule/05-Fruhlingssemester\ 2017"
 
