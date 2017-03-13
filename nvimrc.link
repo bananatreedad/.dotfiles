@@ -11,7 +11,16 @@ Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
 Plug 'mattn/emmet-vim' "emmet makes html easy
 Plug 'vim-syntastic/syntastic' "syntax highlighting for a lot of languages
-Plug 'Chiel92/vim-autoformat' " autoformat plugin
+Plug 'scrooloose/nerdcommenter' "makes multi line commenting possible
+Plug 'tpope/vim-surround' " makes surrounding possible
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "autocompleter for vim
+Plug 'ternjs/tern_for_vim', {'do': 'npm install'} " works great with deoplete: https://www.gregjs.com/vim/2016/configuring-the-deoplete-asynchronous-keyword-completion-plugin-with-tern-for-vim/
+
+
+"Completions
+Plug 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'shawncplus/phpcomplete.vim'
 
 call plug#end()
 
@@ -69,6 +78,10 @@ set completeopt+=longest
 " faster redrawing
 set ttyfast
 
+filetype plugin on
+
+"ignoring cases while searchin
+:set ignorecase
 """"""""""""""""""""""""""
 "      User Interface
 """"""""""""""""""""""""""
@@ -246,7 +259,8 @@ Plug 'kien/ctrlp.vim' " fuzzy finder
 """""""""""""""""""""""""""
 
 " map fuzzyfinder (CtrlP) plugin
-let g:ctrlp_map='<leader>t'
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = 'find %s -type f' " MacOSX/Linux
@@ -261,3 +275,39 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+"emmet
+
+let g:user_emmet_leader_key='<C-space>'
+
+"deoplete
+
+"use deoplete
+let g:deoplete#enable_at_startup = 1
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif "close the comment window automatically
+
+augroup omnifuncs
+	autocmd!
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
+" tern
+if exists('g:plugs["tern_for_vim"]')
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
+
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" tern
+autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
