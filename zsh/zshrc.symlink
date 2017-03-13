@@ -59,7 +59,7 @@ ZSH_THEME="pmcgee"
 # see plugin list @ wiki: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 
 #plugins
-plugins=(git brew osx vi-mode mvn gradle)
+plugins=(git brew osx vi-mode mvn gradle docker)
 
 # User configuration
 
@@ -119,5 +119,5 @@ export PATH="/Users/jnt/anaconda3/bin:$PATH"
 
 #semester aliases
 
-alias study="cd ~/Dropbox/01-Berner\ Fachhochschule/05-Frühlingssemester\ 2017"
+alias study="cd ~/Dropbox/01-Berner\ Fachhochschule/05-Fruhlingssemester\ 2017"
 
