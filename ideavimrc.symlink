@@ -16,3 +16,7 @@ nnoremap <Leader>d :action CloseContent<CR>
 nnoremap <Leader>j :action RecentFiles<CR>
 nnoremap <Leader>k :action FileStructurePopup<CR>
 nnoremap <Leader>h :action QuickJavaDoc<CR>
+nnoremap <Leader>c :action CommentWithLineComment<CR>
+
+set visualbell
+set noerrorbells
